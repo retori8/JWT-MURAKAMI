@@ -28,7 +28,7 @@ def register():
 
     user = User()
     user.email = request.json.get("email")
-    user.password = generate_password_hash(request.json.get("password")).encode("utf-8")
+    user.password = generate_password_hash(request.json.get("password"))
     
     
     if not user.email:
