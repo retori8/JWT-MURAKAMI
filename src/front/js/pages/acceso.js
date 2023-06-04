@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate} from 'react-router-dom';
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import { Alert } from "../component/alerta";
 
 export const Acceso = () => {
   const { store, actions } = useContext(Context);
@@ -26,6 +27,7 @@ export const Acceso = () => {
             alt=""
           />
           <form className="col" onSubmit={(e) => actions.Login(e, navigate)}>
+            <Alert text={store.alert?.text} show={store.alert?.show}/>
             <div className="input mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Email

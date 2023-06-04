@@ -1,3 +1,5 @@
+import { resetWarningCache } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 	  store: {
@@ -19,7 +21,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 		newUser: { email: "", password: "" },
 		url: "https://retori8-opulent-bassoon-r9p6jqqjwv52p557-3001.preview.app.github.dev",
 		currentUser: null,
-		books:[]
+		books:[],
+		alert: {
+			show: false,
+			text: '',
+			textbtn: ''
+		},
+		img:["https://i.pinimg.com/564x/b6/2c/f5/b62cf5d21f7c47fb3e32c0ea4f3e1824.jpg","https://i.pinimg.com/564x/69/da/04/69da04ed8d9a9be03024d885db4f4bcf.jpg","https://i.pinimg.com/564x/8a/23/fc/8a23fc35d26bd9785a493552af64b7e3.jpg", "https://i.pinimg.com/564x/d1/71/ca/d171cae80d2aedd51a808bfcc30598cf.jpg", "https://i.pinimg.com/564x/76/ac/3f/76ac3f7f7d7a22898e700c4d9062782c.jpg", "https://i.pinimg.com/564x/1e/69/67/1e6967508112d7c6810d46f631f1ae92.jpg"]
 	  },
   
 	  actions: {
@@ -125,13 +133,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 		//Books---------------------------------------------------------
   
 		getBooks: async () => {
-				  const { url } = getStore()
+				  const {url, currentUser, books} = getStore()
 				  try {
 					  const response = await fetch(`${url}/api/libros`, {
 						  metod: "GET",
 						  headers: {
-							  "Content-Type": "application/json",
-				'Authorization': `Bearer ${currentUser?.access_token}`
+							"Content-Type": "application/json",
+							'Authorization': `Bearer ${currentUser?.token}`
 						  },
 					  });
 					  if (response.status === 404) throw Error("Page not found");

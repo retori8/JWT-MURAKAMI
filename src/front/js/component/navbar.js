@@ -9,13 +9,13 @@ export const Navbar = () => {
   return (
     <nav className="navbar">
       <div className=" container">
-        <Link className="logo" to="/">
+        <Link className={store.currentUser ? "logo2" : "logo"} to="/">
           <h1> Murakami</h1>
         </Link>
         <div className="ml-auto">
           <button
             type="button"
-            className="btnNavbar btn px-3"
+            className={store.currentUser ? "btnLogout btn px-3" : "btnNavbar btn px-3"}
             aria-current="page"
             onClick={(e) => actions.comprobarLogin(navitgate)}
           >

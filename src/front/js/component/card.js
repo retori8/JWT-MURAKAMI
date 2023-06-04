@@ -9,7 +9,7 @@ export const Card = (props) => {
   return (
     <div className="col text-center">
       <div className="fondo card h-100">
-        <img src={props.img} className="card-img-top p-3" alt="..." />
+        <img src={props.img}  className="card-img-top p-3" alt="..." />
         <div className="card-body">
           <h6 className="card-title">Titulo:{props.titulo}</h6>
           <p className="card-text">Año:{props.año}</p>

@@ -16,6 +16,12 @@
     text-decoration-line: none;
     align-items: center;
 }
+.logo2 {
+    color: rgb(195, 236, 242);
+    text-decoration: none;
+    text-decoration-line: none;
+    align-items: center;
+}
   .input {
     margin: 20px;
     border: none;
@@ -31,6 +37,9 @@
 }
 .btnNavbar {
     background-color: rgb(195, 236, 242);
+}
+.btnLogout{
+    background-color: rgb(244, 223, 223);
 }
 .imagen {
     max-width: 60%;
