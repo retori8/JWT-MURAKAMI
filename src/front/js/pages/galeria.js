@@ -20,7 +20,7 @@ export const Galeria = () => {
 							<Card
 								titulo={book?.title}
 								año={book?.year}
-								img={store.img[parseInt(book?.id) - 1]}
+								img={book?.image_url}
 							/>
 						);
 					})} 

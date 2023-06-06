@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import { Registro } from "./pages/registro";
 import { Acceso } from "./pages/acceso";
 import { Galeria } from "./pages/galeria";
+import { Protected } from "./component/protected";
 
 //create your first component
 const Layout = () => {
@@ -30,7 +31,7 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Registro />} path="/registro" />
                         <Route element={<Acceso />} path="/acceso" />
-                        <Route element={<Galeria />} path="/galeria" />
+                        <Route element={<Protected><Galeria /></Protected>} path="/galeria" />
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
